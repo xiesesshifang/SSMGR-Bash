@@ -128,13 +128,13 @@ fi
 #Install Lib Start
 export LIBSODIUM_VER=1.0.11
 export MBEDTLS_VER=2.4.0
-wget https://github.com/jedisct1/libsodium/releases/download/1.0.11/libsodium-$LIBSODIUM_VER.tar.gz
+wget --no-check-certificate https://github.com/jedisct1/libsodium/releases/download/1.0.11/libsodium-$LIBSODIUM_VER.tar.gz
 tar xvf libsodium-$LIBSODIUM_VER.tar.gz && rm -rf libsodium-$LIBSODIUM_VER.tar.gz
 pushd libsodium-$LIBSODIUM_VER
 ./configure --prefix=/usr && make
 make install
 popd
-wget https://tls.mbed.org/download/mbedtls-$MBEDTLS_VER-gpl.tgz
+wget --no-check-certificate https://tls.mbed.org/download/mbedtls-$MBEDTLS_VER-gpl.tgz
 tar xvf mbedtls-$MBEDTLS_VER-gpl.tgz && rm -rf mbedtls-$MBEDTLS_VER-gpl.tgz
 pushd mbedtls-$MBEDTLS_VER
 make SHARED=1 CFLAGS=-fPIC
@@ -145,7 +145,7 @@ ldconfig
 #Install Lib End
 
 #Install Shadowsocks-Libev Start
-wget https://github.com/shadowsocks/shadowsocks-libev/releases/download/v3.0.3/shadowsocks-libev-3.0.3.tar.gz
+wget --no-check-certificate https://github.com/shadowsocks/shadowsocks-libev/releases/download/v3.0.3/shadowsocks-libev-3.0.3.tar.gz
 tar -xf shadowsocks-libev-3.0.3.tar.gz && rm -rf shadowsocks-libev-3.0.3.tar.gz && cd shadowsocks-libev-3.0.3
 ./configure
 make && make install
